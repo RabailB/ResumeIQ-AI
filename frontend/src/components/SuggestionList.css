@@ -1,0 +1,145 @@
+.suggestion-list-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.suggestion-stats {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.suggestion-stat-item {
+  display: flex;
+}
+
+.suggestion-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.suggestion-item {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: all 0.25s ease;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.suggestion-item:hover {
+  border-color: var(--priority-color, rgba(255,255,255,0.12));
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.suggestion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  cursor: pointer;
+  gap: 12px;
+  user-select: none;
+}
+
+.suggestion-header:focus {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: -2px;
+}
+
+.suggestion-left {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  flex: 1;
+  min-width: 0;
+}
+
+.priority-icon {
+  font-size: 16px;
+  line-height: 1.5;
+  flex-shrink: 0;
+}
+
+.suggestion-text-group {
+  flex: 1;
+  min-width: 0;
+}
+
+.suggestion-message {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.suggestion-meta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.priority-tag {
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.chevron {
+  flex-shrink: 0;
+  color: var(--text-muted);
+  transition: transform 0.25s ease;
+}
+
+.chevron.expanded {
+  transform: rotate(180deg);
+  color: var(--accent-cyan);
+}
+
+.suggestion-tip {
+  display: flex;
+  gap: 12px;
+  padding: 16px 20px;
+  background: rgba(0, 212, 255, 0.05);
+  border-top: 1px solid rgba(0, 212, 255, 0.1);
+  animation: fadeInScale 0.2s ease;
+}
+
+.tip-icon {
+  font-size: 18px;
+  flex-shrink: 0;
+  line-height: 1.4;
+}
+
+.tip-content {
+  flex: 1;
+}
+
+.tip-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent-cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+
+.tip-text {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
