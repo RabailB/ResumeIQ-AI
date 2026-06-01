@@ -329,38 +329,37 @@
 .float-illus {
   position: absolute;
   pointer-events: none;
-  filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.12));
-  transition: var(--transition);
+  z-index: 3;
 }
 
 .float-illus img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  /* This removes the white background — blends with cream page color */
+  mix-blend-mode: multiply;
+  display: block;
 }
 
 .illus-boy {
-  width: 110px;
-  height: 110px;
-  top: -20px;
-  left: -55px;
-  filter: drop-shadow(0 8px 20px rgba(249, 115, 22, 0.2));
+  width: 130px;
+  height: 130px;
+  top: -30px;
+  left: -70px;
 }
 
 .illus-thinking {
-  width: 100px;
-  height: 100px;
-  bottom: 60px;
-  left: -65px;
-  filter: drop-shadow(0 8px 20px rgba(234, 179, 8, 0.2));
+  width: 115px;
+  height: 115px;
+  bottom: 40px;
+  left: -75px;
 }
 
 .illus-analyzing {
-  width: 130px;
-  height: 130px;
-  bottom: -20px;
-  right: -50px;
-  filter: drop-shadow(0 8px 20px rgba(249, 115, 22, 0.15));
+  width: 150px;
+  height: 150px;
+  bottom: -30px;
+  right: -60px;
 }
 
 /* ===== FEATURES SECTION ===== */
