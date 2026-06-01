@@ -41,102 +41,120 @@ export default function Register() {
 
   return (
     <div className="auth-page">
-      <div className="auth-bg-orbs">
-        <div className="auth-orb auth-orb-1" />
-        <div className="auth-orb auth-orb-2" />
+      {/* Left panel */}
+      <div className="auth-left">
+        <div className="auth-left-blob auth-blob-1" />
+        <div className="auth-left-blob auth-blob-2" />
+        <div className="auth-brand">
+          <span className="auth-brand-icon">🧠</span>
+          <h2 className="auth-brand-title">ResumeIQ AI</h2>
+          <p className="auth-brand-sub">Join thousands of job seekers using AI to land their dream job faster.</p>
+        </div>
+        <div className="auth-features-list">
+          {[
+            'Free to use — no credit card needed',
+            'Instant ATS score in under 5 seconds',
+            'AI-powered job recommendations',
+            'Detailed improvement suggestions',
+          ].map((f) => (
+            <div key={f} className="auth-feature-item">
+              <div className="auth-feature-check">✓</div>
+              <span>{f}</span>
+            </div>
+          ))}
+        </div>
       </div>
 
-      <div className="auth-card glass fade-in-up">
-        <div className="auth-header">
-          <Link to="/" className="auth-logo">
-            <span>🧠</span>
-            <span>Resume<span className="gradient-text">IQ</span> AI</span>
-          </Link>
-          <h1 className="auth-title">Create your account</h1>
-          <p className="auth-subtitle">Join thousands of job seekers using AI to land their dream job</p>
-        </div>
-
-        {error && (
-          <div className="alert alert-error fade-in" id="register-error-msg">
-            <span>⚠️</span>
-            <span>{error}</span>
-          </div>
-        )}
-
-        <form className="auth-form" onSubmit={handleSubmit} id="register-form" noValidate>
-          <div className="input-group">
-            <label className="input-label" htmlFor="register-name">Full Name</label>
-            <input
-              id="register-name"
-              name="name"
-              type="text"
-              className="input-field"
-              placeholder="Jane Doe"
-              value={form.name}
-              onChange={handleChange}
-              autoComplete="name"
-              required
-            />
+      {/* Right panel */}
+      <div className="auth-right">
+        <div className="auth-form-box fade-in-up">
+          <div className="auth-form-header">
+            <Link to="/" style={{ display: 'inline-block', marginBottom: 20, fontSize: 14, color: 'var(--text-muted)', fontWeight: 600 }}>
+              ← Back to home
+            </Link>
+            <h1 className="auth-form-title">Create your account ✨</h1>
+            <p className="auth-form-sub">Start analyzing your resume for free today</p>
           </div>
 
-          <div className="input-group">
-            <label className="input-label" htmlFor="register-email">Email Address</label>
-            <input
-              id="register-email"
-              name="email"
-              type="email"
-              className="input-field"
-              placeholder="you@example.com"
-              value={form.email}
-              onChange={handleChange}
-              autoComplete="email"
-              required
-            />
+          {error && (
+            <div className="alert alert-error fade-in" id="register-error-msg" style={{ marginBottom: 20 }}>
+              <span>⚠️</span>
+              <span>{error}</span>
+            </div>
+          )}
+
+          <form className="auth-form" onSubmit={handleSubmit} id="register-form" noValidate>
+            <div className="input-group">
+              <label className="input-label" htmlFor="register-name">Full Name</label>
+              <input
+                id="register-name"
+                name="name"
+                type="text"
+                className="input-field"
+                placeholder="Jane Doe"
+                value={form.name}
+                onChange={handleChange}
+                autoComplete="name"
+                required
+              />
+            </div>
+
+            <div className="input-group">
+              <label className="input-label" htmlFor="register-email">Email Address</label>
+              <input
+                id="register-email"
+                name="email"
+                type="email"
+                className="input-field"
+                placeholder="you@example.com"
+                value={form.email}
+                onChange={handleChange}
+                autoComplete="email"
+                required
+              />
+            </div>
+
+            <div className="input-group">
+              <label className="input-label" htmlFor="register-password">Password</label>
+              <input
+                id="register-password"
+                name="password"
+                type="password"
+                className="input-field"
+                placeholder="Min. 6 characters"
+                value={form.password}
+                onChange={handleChange}
+                autoComplete="new-password"
+                required
+              />
+            </div>
+
+            <button
+              type="submit"
+              className="btn-primary auth-submit-btn"
+              disabled={loading}
+              id="register-submit-btn"
+              style={{ width: '100%', justifyContent: 'center', borderRadius: 'var(--radius-md)', padding: '14px' }}
+            >
+              {loading ? (
+                <>
+                  <div className="spinner" />
+                  <span>Creating account…</span>
+                </>
+              ) : (
+                <span>Create Free Account 🚀</span>
+              )}
+            </button>
+          </form>
+
+          <p style={{ fontSize: 12, color: 'var(--text-muted)', textAlign: 'center', marginTop: 16 }}>
+            By creating an account, you agree to our Terms of Service and Privacy Policy.
+          </p>
+
+          <div className="auth-switch">
+            Already have an account?{' '}
+            <Link to="/login" id="register-to-login-link">Sign in</Link>
           </div>
-
-          <div className="input-group">
-            <label className="input-label" htmlFor="register-password">Password</label>
-            <input
-              id="register-password"
-              name="password"
-              type="password"
-              className="input-field"
-              placeholder="Min. 6 characters"
-              value={form.password}
-              onChange={handleChange}
-              autoComplete="new-password"
-              required
-            />
-          </div>
-
-          <button
-            type="submit"
-            className="btn-primary auth-submit-btn"
-            disabled={loading}
-            id="register-submit-btn"
-          >
-            {loading ? (
-              <>
-                <div className="spinner" />
-                <span>Creating account…</span>
-              </>
-            ) : (
-              <span>Create Free Account</span>
-            )}
-          </button>
-        </form>
-
-        <p className="auth-terms">
-          By creating an account, you agree to our{' '}
-          <span className="auth-link">Terms of Service</span> and{' '}
-          <span className="auth-link">Privacy Policy</span>.
-        </p>
-
-        <div className="auth-footer-text">
-          Already have an account?{' '}
-          <Link to="/login" className="auth-link" id="register-to-login-link">
-            Sign in
-          </Link>
         </div>
       </div>
     </div>

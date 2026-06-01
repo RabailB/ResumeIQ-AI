@@ -1,15 +1,29 @@
+/* ===================== SKILL TAGS ===================== */
 .skill-tags-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  padding: 8px 0;
 }
 
-.skill-count-badge {
-  display: flex;
-  align-items: center;
+.skill-tags-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
 }
 
-.skill-tags-grid {
+.skill-tags-count {
+  font-size: 13px;
+  color: var(--accent-orange);
+  font-weight: 700;
+  margin-bottom: 16px;
+  background: rgba(249, 115, 22, 0.08);
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+
+.skill-tags-list {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -19,27 +33,35 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 7px 14px;
-  background: var(--tag-bg, rgba(0, 212, 255, 0.1));
-  border: 1px solid var(--tag-border, rgba(0, 212, 255, 0.25));
-  color: var(--tag-color, #00d4ff);
+  padding: 8px 16px;
   border-radius: 999px;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 700;
+  transition: var(--transition);
   cursor: default;
-  transition: all 0.2s ease;
-  animation: fadeIn 0.4s ease forwards;
+  background: #FEF3C7;
+  color: #92400E;
+  border: 1.5px solid #FDE68A;
 }
 
 .skill-tag:hover {
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 4px 15px var(--tag-border);
+  background: #FDE68A;
+  border-color: #FDBA74;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.15);
 }
 
 .skill-tag-dot {
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
+  background: var(--accent-orange);
   border-radius: 50%;
-  background: var(--tag-color, #00d4ff);
   flex-shrink: 0;
+}
+
+.skill-empty {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-muted);
+  font-size: 15px;
 }

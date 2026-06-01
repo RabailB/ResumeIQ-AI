@@ -1,10 +1,10 @@
 import React, { useEffect, useRef } from 'react'
 
 const COLORS = {
-  excellent: { stroke: '#10b981', glow: '#10b981', label: 'Excellent' },
-  good: { stroke: '#00d4ff', glow: '#00d4ff', label: 'Good' },
-  average: { stroke: '#f59e0b', glow: '#f59e0b', label: 'Average' },
-  poor: { stroke: '#ef4444', glow: '#ef4444', label: 'Poor' },
+  excellent: { stroke: '#16A34A', glow: '#16A34A', label: 'Excellent' },
+  good: { stroke: '#F97316', glow: '#F97316', label: 'Good' },
+  average: { stroke: '#EAB308', glow: '#EAB308', label: 'Average' },
+  poor: { stroke: '#DC2626', glow: '#DC2626', label: 'Poor' },
 }
 
 function getColorKey(score) {
@@ -62,7 +62,7 @@ export default function ScoreRing({ score = 0, size = 180 }) {
             cy={cy}
             r={radius}
             fill="none"
-            stroke="rgba(255,255,255,0.07)"
+            stroke="#FEF3C7"
             strokeWidth={strokeWidth}
           />
           {/* Progress arc */}
@@ -109,8 +109,8 @@ export default function ScoreRing({ score = 0, size = 180 }) {
           <span
             style={{
               fontSize: labelSize * 0.75,
-              color: 'rgba(255,255,255,0.4)',
-              fontWeight: 500,
+              color: '#A8A29E',
+              fontWeight: 600,
               letterSpacing: '0.05em',
               textTransform: 'uppercase',
             }}

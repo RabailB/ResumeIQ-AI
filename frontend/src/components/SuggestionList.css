@@ -1,145 +1,96 @@
+/* ===================== SUGGESTION LIST ===================== */
 .suggestion-list-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-}
-
-.suggestion-stats {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  padding: 14px 16px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-}
-
-.suggestion-stat-item {
-  display: flex;
-}
-
-.suggestion-accordion {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.suggestion-item {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  transition: all 0.25s ease;
-  opacity: 0;
-  animation-fill-mode: forwards;
-}
-
-.suggestion-item:hover {
-  border-color: var(--priority-color, rgba(255,255,255,0.12));
-  background: rgba(255, 255, 255, 0.05);
-}
-
-.suggestion-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 16px 20px;
-  cursor: pointer;
   gap: 12px;
-  user-select: none;
+  padding: 4px 0;
 }
 
-.suggestion-header:focus {
-  outline: 2px solid var(--accent-cyan);
-  outline-offset: -2px;
-}
-
-.suggestion-left {
-  display: flex;
-  gap: 12px;
-  align-items: flex-start;
-  flex: 1;
-  min-width: 0;
-}
-
-.priority-icon {
-  font-size: 16px;
-  line-height: 1.5;
-  flex-shrink: 0;
-}
-
-.suggestion-text-group {
-  flex: 1;
-  min-width: 0;
-}
-
-.suggestion-message {
+.suggestion-list-title {
   font-size: 14px;
-  font-weight: 500;
-  color: var(--text-primary);
-  line-height: 1.5;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
   margin-bottom: 8px;
 }
 
-.suggestion-meta {
+.suggestion-item {
   display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.priority-tag {
-  padding: 2px 8px;
-  border-radius: 999px;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-}
-
-.chevron {
-  flex-shrink: 0;
-  color: var(--text-muted);
-  transition: transform 0.25s ease;
-}
-
-.chevron.expanded {
-  transform: rotate(180deg);
-  color: var(--accent-cyan);
-}
-
-.suggestion-tip {
-  display: flex;
-  gap: 12px;
+  align-items: flex-start;
+  gap: 14px;
+  background: white;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
   padding: 16px 20px;
-  background: rgba(0, 212, 255, 0.05);
-  border-top: 1px solid rgba(0, 212, 255, 0.1);
-  animation: fadeInScale 0.2s ease;
+  transition: var(--transition);
 }
 
-.tip-icon {
+.suggestion-item:hover {
+  border-color: rgba(249, 115, 22, 0.3);
+  box-shadow: 0 4px 16px rgba(249, 115, 22, 0.08);
+}
+
+.suggestion-item.priority-high {
+  border-left: 4px solid var(--accent-orange);
+}
+
+.suggestion-item.priority-medium {
+  border-left: 4px solid var(--accent-yellow);
+}
+
+.suggestion-item.priority-low {
+  border-left: 4px solid var(--accent-green);
+}
+
+.suggestion-icon {
   font-size: 18px;
   flex-shrink: 0;
-  line-height: 1.4;
+  margin-top: 1px;
 }
 
-.tip-content {
+.suggestion-body {
   flex: 1;
 }
 
-.tip-label {
-  display: block;
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--accent-cyan);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+.suggestion-text {
+  font-size: 15px;
+  color: var(--text-primary);
+  font-weight: 500;
+  line-height: 1.6;
   margin-bottom: 6px;
 }
 
-.tip-text {
-  font-size: 14px;
-  color: var(--text-secondary);
-  line-height: 1.6;
+.suggestion-priority {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.priority-high .suggestion-priority {
+  background: rgba(249, 115, 22, 0.1);
+  color: var(--accent-orange);
+}
+
+.priority-medium .suggestion-priority {
+  background: rgba(234, 179, 8, 0.1);
+  color: #92400E;
+}
+
+.priority-low .suggestion-priority {
+  background: rgba(22, 163, 74, 0.1);
+  color: var(--accent-green);
+}
+
+.suggestion-empty {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-muted);
+  font-size: 15px;
 }
