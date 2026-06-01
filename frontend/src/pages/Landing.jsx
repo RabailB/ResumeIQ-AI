@@ -1,5 +1,8 @@
 import React, { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
+import heroBoy from '../assets/hero_boy.png'
+import heroGirlThinking from '../assets/hero_girl_thinking.png'
+import heroGirlAnalyzing from '../assets/hero_girl_analyzing.png'
 import './Landing.css'
 
 const FEATURES = [
@@ -159,15 +162,15 @@ export default function Landing() {
               </div>
             </div>
 
-            {/* Floating chips */}
-            <div className="float-chip chip-score float-anim" style={{ animationDelay: '0.5s' }}>
-              <span>🎯</span> ATS Score: <strong>87/100</strong>
+            {/* Floating Illustrations */}
+            <div className="float-illus illus-boy float-anim" style={{ animationDelay: '0.3s' }}>
+              <img src={heroBoy} alt="Smart assistant" />
             </div>
-            <div className="float-chip chip-skill float-anim" style={{ animationDelay: '1s' }}>
-              <span>⚡</span> 12 Skills Found
+            <div className="float-illus illus-thinking float-anim" style={{ animationDelay: '0.9s' }}>
+              <img src={heroGirlThinking} alt="Thinking girl" />
             </div>
-            <div className="float-chip chip-job float-anim" style={{ animationDelay: '1.5s' }}>
-              <span>💼</span> 3 Job Matches
+            <div className="float-illus illus-analyzing float-anim" style={{ animationDelay: '1.5s' }}>
+              <img src={heroGirlAnalyzing} alt="Analyzing resume" />
             </div>
           </div>
         </div>
