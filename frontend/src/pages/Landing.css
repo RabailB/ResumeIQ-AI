@@ -326,6 +326,19 @@
 }
 
 /* Floating Illustrations */
+.illus-center {
+  position: relative;
+  z-index: 2;
+}
+
+.illus-main {
+  width: 320px;
+  height: 320px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  display: block;
+}
+
 .float-illus {
   position: absolute;
   pointer-events: none;
@@ -336,7 +349,6 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
-  /* This removes the white background — blends with cream page color */
   mix-blend-mode: multiply;
   display: block;
 }
@@ -353,13 +365,6 @@
   height: 115px;
   bottom: 40px;
   left: -75px;
-}
-
-.illus-analyzing {
-  width: 150px;
-  height: 150px;
-  bottom: -30px;
-  right: -60px;
 }
 
 /* ===== FEATURES SECTION ===== */

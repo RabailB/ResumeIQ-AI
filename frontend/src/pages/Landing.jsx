@@ -112,65 +112,19 @@ export default function Landing() {
               </Link>
             </div>
 
-            <div className="hero-stats reveal">
-              {STATS.map((s) => (
-                <div key={s.label} className="hero-stat">
-                  <span className="hero-stat-value">{s.value}</span>
-                  <span className="hero-stat-label">{s.label}</span>
-                </div>
-              ))}
-            </div>
+
           </div>
 
-          {/* Right — Floating Mockup */}
+          {/* Right — Illustrations Only */}
           <div className="hero-right reveal">
-            <div className="resume-mockup float-anim">
-              <div className="mockup-header">
-                <div className="mockup-avatar">JD</div>
-                <div className="mockup-info">
-                  <div className="mockup-line wide" />
-                  <div className="mockup-line medium" />
-                </div>
-                <div className="ats-pill">
-                  <span className="ats-score-text">ATS</span>
-                  <span className="ats-number">87</span>
-                </div>
-              </div>
-
-              <div className="mockup-section-label">Skills</div>
-              <div className="mockup-skills">
-                {['React', 'Python', 'Node.js', 'ML', 'SQL', 'Docker'].map((s) => (
-                  <span key={s} className="mockup-skill">{s}</span>
-                ))}
-              </div>
-
-              <div className="mockup-section-label">Job Match</div>
-              <div className="mockup-jobs">
-                {[
-                  { role: 'Full Stack Dev', pct: 92 },
-                  { role: 'ML Engineer', pct: 78 },
-                  { role: 'Backend Dev', pct: 71 },
-                ].map((j) => (
-                  <div key={j.role} className="mockup-job-row">
-                    <span className="mockup-job-name">{j.role}</span>
-                    <div className="mockup-job-bar-wrap">
-                      <div className="mockup-job-bar" style={{ width: `${j.pct}%` }} />
-                    </div>
-                    <span className="mockup-job-pct">{j.pct}%</span>
-                  </div>
-                ))}
-              </div>
+            <div className="illus-center float-anim">
+              <img src={heroGirlAnalyzing} alt="Analyzing resume" className="illus-main" />
             </div>
-
-            {/* Floating Illustrations */}
             <div className="float-illus illus-boy float-anim" style={{ animationDelay: '0.3s' }}>
               <img src={heroBoy} alt="Smart assistant" />
             </div>
             <div className="float-illus illus-thinking float-anim" style={{ animationDelay: '0.9s' }}>
               <img src={heroGirlThinking} alt="Thinking girl" />
-            </div>
-            <div className="float-illus illus-analyzing float-anim" style={{ animationDelay: '1.5s' }}>
-              <img src={heroGirlAnalyzing} alt="Analyzing resume" />
             </div>
           </div>
         </div>
